@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DHTMLX Scheduler</title>
+    <link rel="stylesheet" href="https://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.css">
+    <script src="https://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.js"></script>
+</head>
+<body>
+    <div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:580px;'>
+        <div class="dhx_cal_navline">
+            <div class="dhx_cal_prev_button">&nbsp;</div>
+            <div class="dhx_cal_next_button">&nbsp;</div>
+            <div class="dhx_cal_today_button"></div>
+            <div class="dhx_cal_date"></div>
+            <div class="dhx_cal_tab" name="day_tab" style="right:204px;"></div>
+            <div class="dhx_cal_tab" name="week_tab" style="right:140px;"></div>
+            <div class="dhx_cal_tab" name="month_tab" style="right:76px;"></div>
+        </div>
+        <div class="dhx_cal_header"></div>
+        <div class="dhx_cal_data"></div>
+    </div>
+    <script>
+        // Initialize the scheduler when the document is ready
+        document.addEventListener("DOMContentLoaded", function() {
+            scheduler.init("scheduler_here", new Date(), "month");
+    
+            // Add events to the scheduler
+            scheduler.parse([
+                { id: 1, text: "Google AdWords Strategy", start_date: "2017-05-01 09:00", end_date: "2017-05-01 10:30" },
+                { id: 2, text: "New Brochures", start_date: "2017-05-01 11:30", end_date: "2017-05-01 14:15" },
+                { id: 3, text: "Brochure Design Review", start_date: "2017-05-01 13:15", end_date: "2017-05-01 16:15" }
+            ], "json");
+        });
+    </script>
+    
+</body>
+
+</html>
